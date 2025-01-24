@@ -13,6 +13,7 @@ return {
 					}
 				}
 			)
+
 			-- TAILWIND
 			-- source: https://github.com/tailwindlabs/tailwindcss-intellisense
 			lspconfig.tailwindcss.setup(
@@ -21,6 +22,18 @@ return {
 						"tailwindcss-language-server",
 						"--stdio"
 					}
+				}
+			)
+
+			-- HTML
+			-- source:  https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md#html
+			local capabilities = vim.lsp.protocol.make_client_capabilities()
+			capabilities.textDocument.completion.completionItem.snippetSupport = true
+
+			lspconfig.html.setup(
+				{
+					filetypes = { "html", "heex" },
+					capabilities = capabilities
 				}
 			)
 		end

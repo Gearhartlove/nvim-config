@@ -32,3 +32,5 @@ require('gitsigns').setup()
 -- fidget
 require('fidget').setup()
 
+-- lua snip 
+-- require("luasnip.loaders.from_vscode").lazy_load({ paths = { "~/.config/nvim/lua/snippets.lua" } })
