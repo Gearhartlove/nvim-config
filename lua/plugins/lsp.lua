@@ -15,17 +15,20 @@ return {
 			)
 
 			-- TAILWIND
+			-- TODO: get this to work with .heex files. Currently only works with .html files weirdly
+			-- TO-TRY: only have tailwind lsp on, turn off elixir lsp
 			-- source: https://github.com/tailwindlabs/tailwindcss-intellisense
 			lspconfig.tailwindcss.setup(
 				{
 					cmd = {
 						"tailwindcss-language-server",
 						"--stdio"
-					}
+					},
 				}
 			)
 
 			-- HTML
+			-- TODO: hookup snippet engine to enable completions, note might not even need html lsp
 			-- source:  https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md#html
 			local capabilities = vim.lsp.protocol.make_client_capabilities()
 			capabilities.textDocument.completion.completionItem.snippetSupport = true
